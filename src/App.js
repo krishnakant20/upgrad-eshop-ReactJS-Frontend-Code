@@ -1,10 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/home/Home';
+import Navbar from './components/Navbar/Navbar';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Login from './components/login signup/Login';
+import Signup from './components/login signup/Signup';
 
 function App() {
   return (
     <>
-    <h1>Welcome to Eshop</h1>
+    <Router>
+          <Navbar />
+          <div className='container'>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+
+            </Switch>
+          </div>
+        </Router>
     </>
     // <div className="App">
     //   <header className="App-header">
