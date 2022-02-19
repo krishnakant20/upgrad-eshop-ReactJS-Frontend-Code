@@ -1,11 +1,14 @@
 import React from 'react'
 import './Home.css'
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
   return (
     <>
     <h1 id='homeHeading'>Welcome to Eshop Home</h1>
-    <div class="material-icons">home</div>
+    <Link to="/products" className="btn btn-success">Click to See New Products</Link>
+
     </>
   )
 }
