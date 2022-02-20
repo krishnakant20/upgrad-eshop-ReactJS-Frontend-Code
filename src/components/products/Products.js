@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const Products = () => {
     return (
         <>
+        <h1>Products page</h1>
             <div className="card" style={{ "width": "18rem" }}>
                 <img src={require("../../assests/images/1.jpg")} className="card-img-top" alt="123" />
                 <div className="card-body">
