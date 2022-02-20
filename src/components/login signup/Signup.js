@@ -1,5 +1,8 @@
 import React from 'react'
 import "./signup.css"
+import { Link } from 'react-router-dom'
+
+
 const Signup = () => {
     return (
         <>
@@ -35,7 +38,9 @@ const Signup = () => {
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" for="exampleCheck1">Agree to terms & Conditions</label>
                     </div>
-                    <button type="submit" className="btn btn-primary">Sign Up</button>
+                    <Link to="/products" className="btn btn-success">
+                    <button type="submit" className="btn btn-success">Sign Up</button>
+                    </Link>
                 </form>
             </div>
         </>

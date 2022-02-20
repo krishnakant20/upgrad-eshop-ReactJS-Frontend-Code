@@ -11,6 +11,7 @@ import Signup from './components/login signup/Signup';
 import Products from './components/products/Products';
 import Details from './components/details/Details';
 import Orders from './components/orders/Orders';
+import Admin from './components/admin/Admin';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
               </Route>
               <Route exact path="/signup">
                 <Signup />
+              </Route>
+              <Route exact path="/login/admin">
+                <Admin />
               </Route>
 
             </Switch>
