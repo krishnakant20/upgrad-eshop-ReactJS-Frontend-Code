@@ -12,14 +12,21 @@ import Products from './components/products/Products';
 import Details from './components/details/Details';
 import Orders from './components/orders/Orders';
 import Admin from './components/admin/Admin';
+// import ProductState from './context/products/ProductState';
 
 function App() {
   return (
     <>
-    <Router>
+      {/* <ProductState > */}
+
+        <Router>
+
           <Navbar />
+
           <div className='container'>
+
             <Switch>
+
               <Route exact path="/">
                 <Home />
               </Route>
@@ -45,6 +52,8 @@ function App() {
             </Switch>
           </div>
         </Router>
+      {/* </ProductState> */}
+
     </>
     // <div className="App">
     //   <header className="App-header">

@@ -1,11 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { getList } from './ProductsItem';
 
 const Products = () => {
+
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+        let mounted = true;
+        getList()
+            .then(items => {
+                if (mounted) {
+                    setList(items)
+                }
+            })
+        return () => mounted = false;
+    }, [])
+
     return (
         <>
-        <h1>Products page</h1>
+            <h1>Products page</h1>
+            
+            <div>
+                {list.map(item => {
+                    return <div className="card my-3" style={{ "width": "18rem" }} key={item._id} >
+                    <img src={require("../../assests/images/7.jpg")} className="card-img-top" alt="123" />
+                    <div className="card-body">
+                        <h3 className="card-title">{item.name}</h3>
+                        <p className="card-text">Description: {item.description}</p>
+                        <p className="card-text">Price: {item.price}</p>
+                        <Link to="/products/details" className="btn btn-primary">BUY</Link>
+                    </div>
+                </div>
+                })}
+            </div>
             <div className="card" style={{ "width": "18rem" }}>
                 <img src={require("../../assests/images/1.jpg")} className="card-img-top" alt="123" />
                 <div className="card-body">
@@ -14,6 +42,7 @@ const Products = () => {
                     <Link to="/products/details" className="btn btn-primary">BUY</Link>
                 </div>
             </div>
+
         </>
     )
 }
