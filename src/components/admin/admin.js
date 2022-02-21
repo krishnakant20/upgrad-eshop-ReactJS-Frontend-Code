@@ -18,7 +18,7 @@ const Admin = () => {
                 </div>
                 <div className="mb-3 form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <label className="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label className="form-check-label" for="exampleCheck1">Agree T&C</label>
                 </div>
                 <Link to="/products" className="btn btn-success">
                     <button type="submit" className="btn btn-success">Login</button>

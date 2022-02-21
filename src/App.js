@@ -12,6 +12,7 @@ import Products from './components/products/Products';
 import Details from './components/details/Details';
 import Orders from './components/orders/Orders';
 import Admin from './components/admin/Admin';
+import Thanks from './components/thanks/Thanks';
 // import ProductState from './context/products/ProductState';
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
               </Route>
               <Route exact path="/login/admin">
                 <Admin />
+              </Route>
+              <Route exact path="/thanks">
+                <Thanks />
               </Route>
 
             </Switch>

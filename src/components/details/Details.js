@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getList } from '../products/ProductsItem';
+import { getList } from '../products/APIproductsItem';
 
 const Details = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-      let mounted = true;
-      getList()
-          .then(items => {
-              if (mounted) {
-                  setList(items)
-              }
-          })
-      return () => mounted = false;
+    let mounted = true;
+    getList()
+      .then(items => {
+        if (mounted) {
+          setList(items)
+        }
+      })
+    return () => mounted = false;
   }, [])
   return (
     <>
       <h1>Details page</h1>
-
       <div>
         {list.map(item => {
           return <div className="card my-3" style={{ "width": "18rem" }} key={item._id} >
-            <img src={require("../../assests/images/6.jpg")} className="card-img-top" alt="123" />
+            <img src={item.imageUrl} className="card-img-top" alt="123" style={{ width: 300, height: 300 }} />
             <div className="card-body">
               <h3 className="card-title">{item.name}</h3>
               <div>Manufacturer: {item.manufacturer}</div>
